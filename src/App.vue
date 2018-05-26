@@ -3,7 +3,9 @@
         <div class="row">
 
             <!-- <Menu v-on:userChoice="passUserChoice" :list="list"/> -->
-
+            <div v-if="displayEnigme">
+                <Enigme v-on:retourMap='hideEnigme' :numEnigme="compteurEnigme"/>
+            </div>
             <CityMap
             
             />
@@ -16,23 +18,29 @@
 <script>
     import Menu from './components/Menu'
     import CityMap from './components/CityMap'
+    import Enigme from './components/Enigme'
     
 
     export default {
         name: 'App',
         components: {
             Menu,
-            CityMap
+            CityMap,
+            Enigme
         },
 
         data() {
             return {
-                
+                displayEnigme: true,
+                compteurEnigme: 0,
             }
         },
 
         methods: {
-
+            hideEnigme(){
+                this.displayEnigme = false;
+                this.compteurEnigme ++;
+            }
         },
     }
 </script>
