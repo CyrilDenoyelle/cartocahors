@@ -8,7 +8,6 @@
 <script>
     import svgIcons from '../assets/icons.json'
 
-    // voir tuto : https://travishorn.com/interactive-maps-with-vue-leaflet-5430527353c8
     export default {
         props: ["selected"],
 
@@ -33,8 +32,7 @@
                         maxZoom: 18,
                         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>',
                     }
-                );
-
+                )
                 this.tileLayer.addTo(this.map);
             },
         },
