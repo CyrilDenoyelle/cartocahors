@@ -1,0 +1,20 @@
+[
+    {
+        "name": "enigme1",
+        "enonce": "clique sur b",
+        "reponses": ["a", "b", "c" ,"d"],
+        "bonneReponse": "b"
+    },
+    {
+        "name": "enigme2",
+        "enonce": "Combien font 2 + 2 ?",
+        "réponses": ["2", "6", "4", "Obi wan Kenobi"],
+        "bonneReponse": "4"
+    },
+    {
+        "name": "enigme3",
+        "enonce": "Que bois une vache ?",
+        "reponses": ["du lait", "le sang de ses ennemis", "du whisky", "de l'eau"],
+        "bonneReponse": "de l'eau"
+    }
+]

@@ -6,13 +6,13 @@
 
 
 <script>
+    import list from '../assets/stgauplaces.json'
     import svgIcons from '../assets/icons.json'
 
     export default {
-        props: ["selected"],
-
         data () {
             return {
+                places : list,
                 map: null,
                 tileLayer: null,
                 markerList: [],
@@ -24,6 +24,9 @@
 
         mounted() {
             this.initMap();
+            console.log(this.places);
+            this.initMarkers()
+            
         },
 
         methods: {
@@ -107,8 +110,25 @@
                 }
             }
             // --------------------GPS END---------------------
+            initMarkers() {
+                        for (let place of this.places) {
+                            let longitude = place.lat
+                            let latitude = place.lon
+
+                            let marker = L.marker([longitude, latitude])
+                                            .bindPopup(place.name)
+                                            .addTo(this.map)
+
+                            this.markerList.push(marker)
+                        }
+            }
+        },
+
+        watch: {
+
+>>>>>>> 33d178d21900ffc72b79bc9d83a5bfac747284e8
         }
-    };
+    }
 </script>
 
 
