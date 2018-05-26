@@ -1,0 +1,39 @@
+[
+    {
+      "id": "5b04010bac3807835127e642",
+      "name": "Collegiale Saint-Pierre",
+      "adress" : "Place Route Nationale Jean Jaurès, 31800 Saint-Gaudens, France",
+      "lat": 43.107498,
+      "lon": 0.724811,
+      "description": "Description Collégiale Saint-Pierre",
+      "games": [{}, {}]
+    },
+    {
+      "id": "5b04010b29dd676a2486e11e",
+      "name": "Chapelle Saint-jacques",
+      "adress" : "Avenue Maréchal Foch, 31800 Saint-Gaudens, France",
+      "lat": 43.106436,
+      "lon": 0.719826,
+      "description": "Description Chapelle Saint-Jacques",
+      "games": [{}, {}]
+    },
+    {
+      "id": "5b04010bd9ad34d59365ea80",
+      "name": "Square Eugène Azémar",
+      "adress" : "Boulevard Eugène Azémar, 31800 Saint-Gaudens, France",
+      "lat": 43.106399,
+      "lon": 0.721206,
+      "description": "Description Square Eugène Azémar",
+      "games": [{}, {}]
+    },
+    {
+      "id": "5b04010b526602ce9a566d24",
+      "name": "Table d'orientation",
+      "adress" : "44 rue de la République, 31800 Saint-Gaudens, France",
+      "lat": 43.1069415,
+      "lon": 0.7251966,
+      "description": "Description table d'orientation",
+      "games": [{}, {}]
+    }
+  
+]
