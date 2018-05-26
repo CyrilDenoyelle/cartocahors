@@ -30,6 +30,18 @@
         },
 
         methods: {
+            initMarkers() {
+                for (let place of this.places) {
+                    let longitude = place.lat
+                    let latitude = place.lon
+
+                    let marker = L.marker([longitude, latitude])
+                                    .bindPopup(place.name)
+                                    .addTo(this.map)
+
+                    this.markerList.push(marker)
+                }
+            },
             initMap() {
                 this.map = L.map('map').setView([43.107863, 0.723799], 16);
                 this.tileLayer = L.tileLayer(
@@ -100,7 +112,6 @@
                 handler() {
                     // console.log(this.latitude);
                     this.moveMarker();
-                    
                 }
             },
             longitude: {
@@ -108,26 +119,9 @@
                     // console.log(this.longitude);
                     this.moveMarker();
                 }
-            }
+            },
             // --------------------GPS END---------------------
-            initMarkers() {
-                        for (let place of this.places) {
-                            let longitude = place.lat
-                            let latitude = place.lon
-
-                            let marker = L.marker([longitude, latitude])
-                                            .bindPopup(place.name)
-                                            .addTo(this.map)
-
-                            this.markerList.push(marker)
-                        }
-            }
         },
-
-        watch: {
-
->>>>>>> 33d178d21900ffc72b79bc9d83a5bfac747284e8
-        }
     }
 </script>
 
