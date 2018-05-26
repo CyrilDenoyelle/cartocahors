@@ -2,8 +2,8 @@
     <div class="container-fluid" >
         <div class="row">
 
-            <Menu v-on:userChoice="passUserChoice" :list="list"/>
-            <CityMap :selected="selectedPlaces"/>
+            <!-- <Menu v-on:userChoice="passUserChoice" :list="list"/> -->
+            <CityMap/>
 
         </div>
     </div>
