@@ -1,20 +1,62 @@
 [
     {
-        "name": "enigme1",
-        "enonce": "clique sur b",
-        "reponses": ["a", "b", "c" ,"d"],
-        "bonneReponse": "b"
+        "name": "La tapisserie",
+        "inputType": "radio",
+        "startingPoint" : "Eglise",
+        "enonce": "Rentre dans l'église en silence, ne cours pas et mets toi à la recherche de la tapisserie qui est accrochée à un des murs. Une fois trouvée observe la bien et répond à la question suivante : Combien y a t'il de soldat sur la tapisserie ?",
+        "reponses": ["4", "6", "8"],
+        "bonneReponse": "6",
+        "criptex" : "",
+        "icons" : []
     },
     {
-        "name": "enigme2",
-        "enonce": "Combien font 2 + 2 ?",
-        "réponses": ["2", "6", "4", "Obi wan Kenobi"],
-        "bonneReponse": "4"
+        "name": "Les scultures du choeur",
+        "inputType": "radio",
+        "startingPoint": "Eglise",
+        "enonce": "Rentre dans l'église en silence, ne cours pas et pars à la recherche d'une sculture se trouvant en haut d'un des pilliers. Sur celui ci on apercoit un animal, symbole de nos pyrénées. Quel est-il ?",
+        "réponses": ["une chèvre", "Un bouc", "Un isard"],
+        "bonneReponse": "Un isard",
+        "criptex" : "",
+        "icons" : []
     },
     {
-        "name": "enigme3",
-        "enonce": "Que bois une vache ?",
-        "reponses": ["du lait", "le sang de ses ennemis", "du whisky", "de l'eau"],
-        "bonneReponse": "de l'eau"
+        "name": "Qui suis je ?",
+        "inputType": "radio",
+        "startingPoint": "Anywhere",
+        "enonce": "Je commence la nuit, je finis le matin, je suis dans l'étang, je suis dans le jardin et je passe 2 fois dans l'année, qui suis-je?",
+        "reponses": ["la lettre N", "Une mouette", "La haine"],
+        "bonneReponse": "la lettre N",
+        "criptex" : "",
+        "icons" : []
+    },
+    {
+        "name": "Qu'est ce que c'est ?",
+        "inputType": "radio",
+        "startingPoint": "Anywhere",
+        "enonce": "J'ai quelque chose dans ma poche mais ma poche est vide. Qu'est ce que c'est ?",
+        "reponses": ["L'anneau unique", "Un choux", "Un trou"],
+        "bonneReponse": "Un trou",
+        "criptex" : "",
+        "icons" : []
+    },
+    {
+        "name": "Qu'est ce que c'est ?",
+        "inputType": "radio",
+        "startingPoint": "Anywhere",
+        "enonce": "Qui y a t'il entre la fenêtre et l'espace ?",
+        "reponses": ["Le ciel", "Les oiseaux", "Alt"],
+        "bonneReponse": "Alt",
+        "criptex" : "",
+        "icons" : []
+    },
+    {
+        "name": "Cryptex",
+        "inputType": "text",
+        "startingPoint": "Anywhere",
+        "enonce": "Pour savoir ou tu dois te rendre pour la prochaine épreuve. Déchiffre ce message à l'aide du cryptex :",
+        "reponses": [],
+        "bonneReponse": "musée",
+        "criptex" : "É = [cryptex01.svg] | M = [cryptex02.svg] | E = [cryptex03.svg] | S = [cryptex04.svg] | U = [cryptex05.svg]",
+        "icons" : ["criptex01.svg","criptex02.svg","criptex03.svg","criptex04.svg","criptex05.svg"]
     }
 ]
