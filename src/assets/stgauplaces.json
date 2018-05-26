@@ -34,6 +34,15 @@
       "lon": 0.7251966,
       "description": "Description table d'orientation",
       "games": [{}, {}]
+    },
+    {
+      "id": "5b04010b4493099a87448be4",
+      "name": "Cloître roman",
+      "adress": "Place Route Nationale Jean Jaurès",
+      "lat": 43.107331,
+      "lon": 0.724647,
+      "description": "Description cloître roman",
+      "games": [{}, {}] 
     }
   
 ]
