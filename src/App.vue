@@ -6,9 +6,7 @@
             <div v-if="displayEnigme">
                 <Enigme v-on:retourMap='hideEnigme' :numEnigme="compteurEnigme"/>
             </div>
-            <CityMap
-            
-            />
+            <CityMap/>
 
         </div>
     </div>
