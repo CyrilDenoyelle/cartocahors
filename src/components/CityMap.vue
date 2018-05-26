@@ -6,13 +6,13 @@
 
 
 <script>
+    import list from '../assets/stgauplaces.json'
     import svgIcons from '../assets/icons.json'
 
     export default {
-        props: ["selected"],
-
         data () {
             return {
+                places : list,
                 map: null,
                 tileLayer: null,
                 markerList: [],
@@ -21,11 +21,14 @@
 
         mounted() {
             this.initMap();
+            console.log(this.places);
+            this.initMarkers()
+            
         },
 
         methods: {
             initMap() {
-                this.map = L.map('map').setView([44.4491, 1.454], 14);
+                this.map = L.map('map').setView([43.107863, 0.723799], 16);
                 this.tileLayer = L.tileLayer(
                     'https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/voyager/{z}/{x}/{y}.png',
                     {
@@ -35,47 +38,24 @@
                 )
                 this.tileLayer.addTo(this.map);
             },
-        },
+            initMarkers() {
+                        for (let place of this.places) {
+                            let longitude = place.lat
+                            let latitude = place.lon
 
-        watch: {
-            selected: {
-                handler() {
-                    if (this.selected.places) {
-                        for (let marker of this.markerList) {
-                            this.map.removeLayer(marker)
-                        }
-
-                        let placesList = this.selected.places
-                        let infosList = [];
-
-                        for (let index in placesList) {
-                            let infos = [];
-
-                            infos.push(placesList[index].lat)
-                            infos.push(placesList[index].lon)
-                            infos.push(placesList[index].description)
-                            infosList.push(infos)
-                        }
-
-                        for (let index in infosList) {
-                            let longitude = infosList[index][0]
-                            let latitude = infosList[index][1]
-                            let customIcon =    L.icon({
-                                                    iconUrl : svgIcons[this.selected.icon],
-                                                    iconSize: [30, 30],
-                                                })
-
-                            let marker = L.marker([longitude, latitude], {icon: customIcon})
-                                            .bindPopup(infosList[index][2])
+                            let marker = L.marker([longitude, latitude])
+                                            .bindPopup(place.name)
                                             .addTo(this.map)
 
                             this.markerList.push(marker)
                         }
-                    }
-                }
             }
+        },
+
+        watch: {
+
         }
-    };
+    }
 </script>
 
 
