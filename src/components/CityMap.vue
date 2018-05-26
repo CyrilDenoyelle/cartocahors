@@ -41,6 +41,12 @@
 
                     this.markerList.push(marker)
                 }
+
+                let marker = L.marker([43.109308899999995, 0.7266718])
+                .addTo(this.map)
+
+                let circle = L.circle([43.109308899999995, 0.7266718], 10)
+                .addTo(this.map)
             },
             initMap() {
                 this.map = L.map('map').setView([43.107863, 0.723799], 16);
@@ -84,7 +90,8 @@
                                 // .bindPopup(infosList[index][2])
                                 .addTo(this.map)
 
-                console.log(this.measure(this.latitude, this.longitude, 43.109308899999995, 0.7266718));
+                console.log(this.measure(this.latitude, this.longitude, 43.109308899999995, 0.7266718, 10));
+
 
                 // for (let index in infosList) {
                 //     let longitude = infosList[index][0]
