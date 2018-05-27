@@ -1,28 +1,28 @@
 [
     {
-        "id": "texteIntroEnigme1",
+        "id": 1,
         "interlocuteur": "Père Kastaur",
-        "texte": "Approches, mon enfant. Que dirais tu de rendre service au vieil homme que je suis ? Je dois récupérer des parchemins importants, mais j'ai oublié ou ils étaient, si tu les retrouves tu seras récompensé ! Il me semble avoir laissé le premier par ici !"
+        "texte": "Approche, mon enfant. Que dirais-tu de rendre service au vieil homme que je suis ? Je dois récupérer des parchemins importants, mais j'ai oublié où ils étaient, si tu les retrouves tu seras récompensé ! Il me semble avoir laissé le premier par ici !"
     },
     {
-        "id": "texteIntroEnigme2",
+        "id": 2,
         "interlocuteur": "Père Kastaur",
         "texte": "Bien joué ! Regarde ce parchemin, il contient un bout de carte menant vers un trésor, mais il manque les autres. Retrouve les autres et complète la carte ! Je crois qu'il y en a un autre tout près d'ici, près du square."
     },
     {
-        "id": "texteIntroEnigme3",
-        "texte": "Sur le parchemin que vous venez de trouver, vous avez un autre bout de la carte, mais également un indice vers la position du parchemin suivant : il semblerait qu'il se trouve vers la collégiale Saint Pierre"
+        "id": 3,
+        "texte": "Sur le parchemin que tu viens de trouver, tu as un autre bout de la carte, mais également un indice vers la position du parchemin suivant : il semblerait qu'il se trouve vers la collégiale Saint-Pierre."
     },
     {
-        "id": "texteIntroEnigme4",
-        "texte": "Comme pour l'autre parchemin, il y a un bout de carte. Elle est bientot complète : il n'en manque plus qu'un ! L'indice vous envoit vers le cloître roman."
+        "id": 4,
+        "texte": "Comme pour l'autre parchemin, il y a un bout de carte. Elle est bientot complète : il n'en manque plus qu'un ! L'indice t'envoie vers le cloître roman."
     },
     {
-        "id": "texteIntroEnigme5",
-        "texte": "Félicitations ! Vous avez maintenant tous les morceaux de la carte, mais il vous faut encore la reconstituer !"
+        "id": 5,
+        "texte": "Félicitations ! Tu as maintenant tous les morceaux de la carte, mais il te faut encore la reconstituer !"
     },
     {
-        "id": "texteIntroEnigme6",
-        "texte": "La carte vous parle d'un endroit rempli de connaissances, non loin au sud du cloître. Il semblerait que ce ne soit pas un coffre qui renferme ce savoir, mais une table. Mais il y aurait mieux : une vue sur les Pyrénées de toute beautée !"
+        "id": 6,
+        "texte": "La carte te parle d'un endroit rempli de connaissances, non loin au sud du cloître. Il semblerait que ce ne soit pas un coffre qui renferme ce savoir, mais une table. Mais il y aurait mieux : une vue sur les Pyrénées de toute beauté !"
     }
 ]
