@@ -1,6 +1,6 @@
 <template>
     <div class="col-md-6">
-        <div id="categorie">{{enigmes[0].enonce}}</div>
+        <div id="categorie">{{enigmes[numEnigme].enonce}}</div>
         <div v-if="displayMsg === false">
             <div v-for="reponse in enigmes[numEnigme].reponses" :key="reponse.name">
                 <input type="radio" :value="reponse" v-model="picked">{{ reponse }}

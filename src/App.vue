@@ -3,6 +3,7 @@
         <div class="row">
 
             <!-- <Menu v-on:userChoice="passUserChoice" :list="list"/> -->
+            <Introduction/>
             <div v-if="displayEnigme">
                 <Enigme v-on:retourMap='hideEnigme' :numEnigme="compteurEnigme"/>
             </div>
@@ -19,6 +20,7 @@
     import Menu from './components/Menu'
     import CityMap from './components/CityMap'
     import Enigme from './components/Enigme'
+    import Introduction from './components/Introduction'
     
 
     export default {
