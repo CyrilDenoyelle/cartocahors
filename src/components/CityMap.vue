@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-9">
+    <div  class="mapContainer">
         <div id="map" class="map"></div>
     </div>
 </template>
@@ -24,16 +24,15 @@
 
         mounted() {
             this.initMap();
-            console.log(this.places);
-            this.initMarkers()
+            this.initMarkers();
             
         },
 
         methods: {
             initMarkers() {
                 for (let place of this.places) {
-                    let longitude = place.lat
-                    let latitude = place.lon
+                    let longitude = place.lat;
+                    let latitude = place.lon;
 
                     let marker = L.marker([longitude, latitude])
                                     .bindPopup(place.name)
@@ -43,10 +42,10 @@
                 }
 
                 let marker = L.marker([43.109308899999995, 0.7266718])
-                .addTo(this.map)
+                                .addTo(this.map)
+                // let circle = L.circle([43.109308899999995, 0.7266718], 10)
+                // .addTo(this.map)
 
-                let circle = L.circle([43.109308899999995, 0.7266718], 10)
-                .addTo(this.map)
             },
             initMap() {
                 this.map = L.map('map').setView([43.107863, 0.723799], 16);
@@ -78,20 +77,26 @@
             },
             moveMarker(){
 
-                console.log(this.latitude, this.longitude);
+                // console.log(this.latitude, this.longitude);
                 if(this.marker){
                     this.map.removeLayer(this.marker);
                 }
                 let customIcon = L.icon({
-                                    iconUrl : svgIcons["bus.svg"],
+                                    iconUrl : svgIcons["parking.svg"],
                                     iconSize: [30, 30],
                                 })
                 this.marker = L.marker([this.latitude, this.longitude], {icon: customIcon})
                                 // .bindPopup(infosList[index][2])
                                 .addTo(this.map)
 
-                console.log(this.measure(this.latitude, this.longitude, 43.109308899999995, 0.7266718, 10));
 
+
+                // console.log(this.places[1])
+                // console.log(this.measure(this.latitude, this.longitude, this.places[1].lat, this.places[1].lon));
+
+                if(this.measure(this.latitude, this.longitude, 43.109308899999995, 0.7266718)<10){
+                    this.$emit('arrivedInEnigmeZone');
+                }
 
                 // for (let index in infosList) {
                 //     let longitude = infosList[index][0]
@@ -100,7 +105,7 @@
                 //     this.markerList.push(marker)
                 // }
             },
-            measure(lat1, long1, lat2, long2, rad){
+            measure(lat1, long1, lat2, long2){
                 var R = 6378.137; // Radius of earth in KM
                 var dLat = lat2 * Math.PI / 180 - lat1 * Math.PI / 180;
                 var dLong = long2 * Math.PI / 180 - long1 * Math.PI / 180;
@@ -109,7 +114,7 @@
                 Math.sin(dLong/2) * Math.sin(dLong/2);
                 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
                 var d = R * c;
-                return (d * 1000)<rad; // meters
+                return (d * 1000); // meters
             }
         },
 
@@ -135,8 +140,15 @@
 
 <style scoped>
     .map {
+        padding-left:0px;
         height: 100vh;
         width: 100vw;
+    }
+
+    .mapContainer{
+        height: 100vh;
+        width: 100vw;
+    
     }
 </style>
 

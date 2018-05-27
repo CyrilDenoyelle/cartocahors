@@ -8,7 +8,7 @@
     {
         "name": "enigme2",
         "enonce": "Combien font 2 + 2 ?",
-        "réponses": ["2", "6", "4", "Obi wan Kenobi"],
+        "reponses": ["2", "6", "4", "Obi wan Kenobi"],
         "bonneReponse": "4"
     },
     {

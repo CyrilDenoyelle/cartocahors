@@ -1,14 +1,14 @@
 <template>
-    <div class="col-md-6">
-        <div id="categorie">{{enigmes[0].enonce}}</div>
-        <div v-if="displayMsg === false">
+    <div class="enigme" width="100%" heigth="100%">
+        <div id="categorie">{{enigmes[numEnigme].enonce}}</div>
+        <div v-if="displayMsg == false">
             <div v-for="reponse in enigmes[numEnigme].reponses" :key="reponse.name">
                 <input type="radio" :value="reponse" v-model="picked">{{ reponse }}
             </div>
             <button v-on:click="submitAnswer">Valider</button>
         </div>
         <div v-else>
-            <p>{{msg}}</p>
+            <p>{{msg.text}}</p>
             <!-- changer le nom -->
             <button v-on:click="messageLu">OK</button>
         </div>
@@ -24,7 +24,10 @@
                 enigmes: enigmes,
                 picked:'',
                 displayMsg: false,
-                msg: "",
+                msg: {
+                   result: null,
+                   text:null,
+                },
             }
         },
 
@@ -32,30 +35,33 @@
 
         methods: {
             submitAnswer() {
-                console.log(this.picked);
                 this.displayMsg = true;
                 if(this.picked === enigmes[this.numEnigme].bonneReponse){
-                    this.msg = "Vous avez résolu l'énigme ! Félicitations !"
+                    this.msg.text = "Vous avez résolu l'énigme ! Félicitations !";
+                    this.msg.result = 'OK';
                 } else {
-                    this.msg = "Perdu ! Essaye encore"
+                    this.msg.text = "Perdu ! Essaye encore";
                 }
             },
             messageLu() {
-                if(this.msg === "Vous avez résolu l'énigme ! Félicitations !"){
+                this.displayMsg = false;
+                if(this.msg.result == "OK"){
+                    this.msg.text = "";
                     this.$emit("retourMap");
                 }
-                else{
-                    this.displayMsg = false;
-                }
+
+                // else{
+                // }
             }
         },
 
     }
 </script>
 
-
-
 <style>
-
+    .enigme {
+        width:100%;
+        heigth:100%;
+    }
 </style>
 

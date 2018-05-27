@@ -1,12 +1,14 @@
 <template>
     <div class="container-fluid" >
-        <div class="row">
+        <div class="row" style="">
 
             <!-- <Menu v-on:userChoice="passUserChoice" :list="list"/> -->
             <div v-if="displayEnigme">
-                <Enigme v-on:retourMap='hideEnigme' :numEnigme="compteurEnigme"/>
+                <Enigme v-on:retourMap='hideEnigmeShowMap' :numEnigme="compteurEnigme"/>
             </div>
-            <CityMap/>
+            <div v-if="displayMap">
+                <CityMap v-on:arrivedInEnigmeZone='hideMapShowEnigme'/>
+            </div>
 
         </div>
     </div>
@@ -17,7 +19,6 @@
     import Menu from './components/Menu'
     import CityMap from './components/CityMap'
     import Enigme from './components/Enigme'
-    
 
     export default {
         name: 'App',
@@ -29,15 +30,26 @@
 
         data() {
             return {
-                displayEnigme: true,
+                displayEnigme: false,
+                displayMap: true,
                 compteurEnigme: 0,
             }
         },
 
         methods: {
-            hideEnigme(){
+            hideEnigmeShowMap(){
+                // hide enigme
                 this.displayEnigme = false;
                 this.compteurEnigme ++;
+                // show map
+                this.displayMap = true;
+            },
+
+            hideMapShowEnigme(){
+                // show map
+                this.displayEnigme = true;
+                // hide enigme
+                this.displayMap = false;
             }
         },
     }
@@ -45,4 +57,8 @@
 
 
 <style>
+    .row {
+        height: 100%;
+        width:100%;
+    }
 </style>
