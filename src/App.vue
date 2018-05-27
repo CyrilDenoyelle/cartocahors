@@ -1,13 +1,14 @@
 <template>
     <div class="container-fluid" >
         <div class="row" style="">
+            <Menu/>
             <div v-if="displayNarrateur">
                 <img src="https://gfx.gexe.pl/2015/3/24/204612.1427226372m.jpg" alt="Vieux qui parle"/>
                 <p>Approche, mon enfant. Que dirais-tu de rendre service au vieil homme que je suis ? Je dois récupérer des parchemins importants, mais j'ai oublié où ils étaient, si tu les retrouves tu seras récompensé ! Il me semble avoir laissé le premier par ici !</p>
                 <button v-on:click="hideNarrateurShowMap">OK</button>
             </div>
 
-            <!-- <Menu v-on:userChoice="passUserChoice" :list="list"/> -->
+            
             <div v-if="displayEnigme">
                 <Enigme v-on:retourMap='hideEnigmeShowMap' :numEnigme="compteurEnigme"/>
             </div>
