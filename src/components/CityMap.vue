@@ -44,7 +44,7 @@
                 let marker = L.marker([43.109308899999995, 0.7266718])
                                 .addTo(this.map)
                 // let circle = L.circle([43.109308899999995, 0.7266718], 10)
-                // .addTo(this.map)
+                //                 .addTo(this.map)
 
             },
             initMap() {
@@ -87,7 +87,7 @@
                                 })
                 this.marker = L.marker([this.latitude, this.longitude], {icon: customIcon})
                                 // .bindPopup(infosList[index][2])
-                                .addTo(this.map)
+                                .addTo(this.map);
 
 
 
@@ -106,14 +106,14 @@
                 // }
             },
             measure(lat1, long1, lat2, long2){
-                var R = 6378.137; // Radius of earth in KM
-                var dLat = lat2 * Math.PI / 180 - lat1 * Math.PI / 180;
-                var dLong = long2 * Math.PI / 180 - long1 * Math.PI / 180;
-                var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                let R = 6378.137; // Radius of earth in KM
+                let dLat = lat2 * Math.PI / 180 - lat1 * Math.PI / 180;
+                let dLong = long2 * Math.PI / 180 - long1 * Math.PI / 180;
+                let a = Math.sin(dLat/2) * Math.sin(dLat/2) +
                 Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
                 Math.sin(dLong/2) * Math.sin(dLong/2);
-                var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-                var d = R * c;
+                let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+                let d = R * c;
                 return (d * 1000); // meters
             }
         },

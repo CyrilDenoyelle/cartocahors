@@ -49,9 +49,6 @@
                     this.msg.text = "";
                     this.$emit("retourMap");
                 }
-
-                // else{
-                // }
             }
         },
 
