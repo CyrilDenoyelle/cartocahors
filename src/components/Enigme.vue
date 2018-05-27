@@ -1,7 +1,8 @@
 <template>
     <div class="enigme">
-        <div id="categorie">{{enigmes[numEnigme].enonce}}</div>
+        
         <div v-if="displayMsg == false">
+            <div id="categorie">{{enigmes[numEnigme].enonce}}</div>
             <div v-for="reponse in enigmes[numEnigme].reponses" :key="reponse.name">
                 <input type="radio" :value="reponse" v-model="picked">  {{ reponse }}
             </div>
@@ -27,6 +28,7 @@
                 dialogues: dialogues,
                 picked:'',
                 screenView: 0,
+                displayMsg: false,
                 displayOKbutton: false,
                 msg: {
                    result: null,
@@ -39,19 +41,21 @@
 
         methods: {
             submitAnswer() {
-                this.screenView = 1;
+                
+                this.displayMsg = true;
                 if(this.picked === enigmes[this.numEnigme].bonneReponse){
                     this.msg.text = "Tu as résolu l'énigme ! Félicitations !";
       
                     let delay = setTimeout(function() {
                         this.msg.text = this.dialogues[this.numEnigme + 1].texte;
                         this.displayOKbutton = true
-                        }.bind(this), 3000)
+                        }.bind(this), 2000)
                         
                     this.msg.result = 'OK';
                     
                 } else {
                     this.msg.text = "Perdu ! Essaye encore";
+                    this.displayOKbutton = true
                 }
             },
             messageLu() {
@@ -62,7 +66,8 @@
                     this.$emit("retourMap");
                 }
                 else {
-                    this.screenView = 0;
+                    this.displayOKbutton = false;
+                    this.displayMsg = false;
                 }
             }
         },
