@@ -1,7 +1,6 @@
 <template>
-    <div class="enigme">
-        
-        <div v-if="displayMsg == false">
+    <div class="enigme" width="100%" heigth="100%">
+        <div v-if="screenView === 0">
             <div id="categorie">{{enigmes[numEnigme].enonce}}</div>
             <div v-for="reponse in enigmes[numEnigme].reponses" :key="reponse.name">
                 <input type="radio" :value="reponse" v-model="picked">  {{ reponse }}
@@ -28,7 +27,6 @@
                 dialogues: dialogues,
                 picked:'',
                 screenView: 0,
-                displayMsg: false,
                 displayOKbutton: false,
                 msg: {
                    result: null,
@@ -41,21 +39,19 @@
 
         methods: {
             submitAnswer() {
-                
-                this.displayMsg = true;
+                this.screenView = 1;
                 if(this.picked === enigmes[this.numEnigme].bonneReponse){
                     this.msg.text = "Tu as résolu l'énigme ! Félicitations !";
       
                     let delay = setTimeout(function() {
                         this.msg.text = this.dialogues[this.numEnigme + 1].texte;
                         this.displayOKbutton = true
-                        }.bind(this), 2000)
-                        
+                        }.bind(this), 3000)
+
                     this.msg.result = 'OK';
                     
                 } else {
                     this.msg.text = "Perdu ! Essaye encore";
-                    this.displayOKbutton = true
                 }
             },
             messageLu() {
@@ -66,10 +62,12 @@
                     this.$emit("retourMap");
                 }
                 else {
-                    this.displayOKbutton = false;
-                    this.displayMsg = false;
+                    this.screenView = 0;
                 }
             }
+        },
+        showModal () {
+          this.rewardModalDisplay = true;
         },
 
     }
@@ -78,7 +76,7 @@
 <style>
     .enigme {
         width:100%;
-        height:100%;
+        heigth:100%;
     }
 </style>
 

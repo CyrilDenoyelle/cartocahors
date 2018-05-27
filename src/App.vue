@@ -12,7 +12,7 @@
                 <Enigme v-on:retourMap='hideEnigmeShowMap' :numEnigme="compteurEnigme"/>
             </div>
             <div v-if="displayMap">
-                <CityMap v-on:arrivedInEnigmeZone='hideMapShowEnigme'/>
+                <CityMap v-on:arrivedInEnigmeZone='hideMapShowEnigme' :rewardModalDisplay='test'/>
             </div>
 
         </div>
@@ -39,6 +39,7 @@
                 displayMap: false,
                 compteurEnigme: 0,
                 displayNarrateur: true,
+                test: false,
             }
         },
 
@@ -50,6 +51,7 @@
                 this.compteurEnigme ++;
                 // show map
                 this.displayMap = true;
+                this.test = true;
             },
 
             hideMapShowEnigme(){

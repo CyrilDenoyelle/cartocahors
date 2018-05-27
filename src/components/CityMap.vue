@@ -4,7 +4,7 @@
             <div id="map" class="map"></div>
         </div>
         <div>
-          <b-modal v-model="rewardModalDisplay" id="modal" title="Bootstrap-Vue">
+          <b-modal v-model="rewardModal" id="modal" title="Bootstrap-Vue">
             <p class="my-4">Hello from modal!</p>
           </b-modal>
         </div>
@@ -31,11 +31,11 @@
 
         props: ['rewardModalDisplay'],
 
-        // computed: {
-        //   rewardModal () {
-        //     return this.rewardModalDisplay;
-        //   }
-        // }
+        computed: {
+          rewardModal () {
+            return this.rewardModalDisplay;
+          }
+        },
 
         mounted() {
             this.initMap();
@@ -108,6 +108,9 @@
             // showModal(){
             //     this.rewardModalDisplay = true;
             // }
+            showModal () {
+                this.rewardModalDisplay = true;
+            },
         },
 
         watch: {
