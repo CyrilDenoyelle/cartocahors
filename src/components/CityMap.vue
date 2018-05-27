@@ -38,7 +38,6 @@
                                     .addTo(this.map)
                                     .on('click', this.arrivedInEnigmeZone);
 
-                    this.markerList.push(marker)
                 }
 
                 // let marker = L.marker([43.109308899999995, 0.7266718])

@@ -39,6 +39,7 @@
                 if(this.picked === enigmes[this.numEnigme].bonneReponse){
                     this.msg.text = "Vous avez résolu l'énigme ! Félicitations !";
                     this.msg.result = 'OK';
+                    
                 } else {
                     this.msg.text = "Perdu ! Essaye encore";
                 }
