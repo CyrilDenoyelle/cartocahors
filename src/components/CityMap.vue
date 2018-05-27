@@ -25,7 +25,6 @@
         mounted() {
             this.initMap();
             this.initMarkers();
-            
         },
 
         methods: {
@@ -35,16 +34,22 @@
                     let latitude = place.lon;
 
                     let marker = L.marker([longitude, latitude])
-                                    .bindPopup(place.name)
+                                    // .bindPopup(place)
                                     .addTo(this.map)
+                                    .on('click', this.arrivedInEnigmeZone);
 
                     this.markerList.push(marker)
                 }
 
-                let marker = L.marker([43.109308899999995, 0.7266718])
-                                .addTo(this.map)
+                // let marker = L.marker([43.109308899999995, 0.7266718])
+                //                 .addTo(this.map)
                 // let circle = L.circle([43.109308899999995, 0.7266718], 10)
                 //                 .addTo(this.map)
+
+
+            },
+            arrivedInEnigmeZone(){
+                this.$emit('arrivedInEnigmeZone')
 
             },
             initMap() {
@@ -66,14 +71,6 @@
                     })
                 },1000)
 
-                // navigator.geolocation.watchPosition(
-                //     e=>{
-                //         console.log(e);
-                //     },
-                //     err=>{
-                //         console.log(err);
-                //     }
-                // )
             },
             moveMarker(){
 
@@ -82,8 +79,8 @@
                     this.map.removeLayer(this.marker);
                 }
                 let customIcon = L.icon({
-                                    iconUrl : svgIcons["parking.svg"],
-                                    iconSize: [30, 30],
+                                    iconUrl : svgIcons["maternelle.svg"],
+                                    iconSize: [35, 35],
                                 })
                 this.marker = L.marker([this.latitude, this.longitude], {icon: customIcon})
                                 // .bindPopup(infosList[index][2])
@@ -95,7 +92,8 @@
                 // console.log(this.measure(this.latitude, this.longitude, this.places[1].lat, this.places[1].lon));
 
                 if(this.measure(this.latitude, this.longitude, 43.109308899999995, 0.7266718)<10){
-                    this.$emit('arrivedInEnigmeZone');
+
+                    // this.$emit('arrivedInEnigmeZone');
                 }
 
                 // for (let index in infosList) {
