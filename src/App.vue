@@ -1,8 +1,9 @@
 <template>
     <div class="container-fluid" >
         <div class="row" style="">
-
-            <!-- <Menu v-on:userChoice="passUserChoice" :list="list"/> -->
+            <!-- <div id="affMenu"> -->
+                <Menu/>
+            <!-- </div> -->
             <div v-if="displayEnigme">
                 <Enigme v-on:retourMap='hideEnigmeShowMap' :numEnigme="compteurEnigme"/>
             </div>
@@ -61,4 +62,8 @@
         height: 100%;
         width:100%;
     }
+    /* #affMenu
+    {
+        position: fixed;
+    } */
 </style>

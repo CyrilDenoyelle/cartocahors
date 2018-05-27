@@ -1,5 +1,5 @@
 <template>
-    <div class="enigme" width="100%" heigth="100%">
+    <div class="enigme">
         <div id="categorie">{{enigmes[numEnigme].enonce}}</div>
         <div v-if="displayMsg == false">
             <div v-for="reponse in enigmes[numEnigme].reponses" :key="reponse.name">
@@ -58,7 +58,7 @@
 <style>
     .enigme {
         width:100%;
-        heigth:100%;
+        height:100%;
     }
 </style>
 
