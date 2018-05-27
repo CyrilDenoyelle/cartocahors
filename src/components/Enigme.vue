@@ -49,6 +49,7 @@
                         }.bind(this), 3000)
                         
                     this.msg.result = 'OK';
+                    
                 } else {
                     this.msg.text = "Perdu ! Essaye encore";
                 }

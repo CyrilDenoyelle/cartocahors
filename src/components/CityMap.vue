@@ -1,6 +1,13 @@
 <template>
-    <div  class="mapContainer">
-        <div id="map" class="map"></div>
+    <div>
+        <div  class="mapContainer">
+            <div id="map" class="map"></div>
+        </div>
+        <div>
+          <b-modal v-model="rewardModalDisplay" id="modal" title="Bootstrap-Vue">
+            <p class="my-4">Hello from modal!</p>
+          </b-modal>
+        </div>
     </div>
 </template>
 
@@ -22,9 +29,18 @@
             }
         },
 
+        props: ['rewardModalDisplay'],
+
+        // computed: {
+        //   rewardModal () {
+        //     return this.rewardModalDisplay;
+        //   }
+        // }
+
         mounted() {
             this.initMap();
             this.initMarkers();
+            // this.showModal();
         },
 
         methods: {
@@ -37,12 +53,7 @@
                                     // .bindPopup(place)
                                     .addTo(this.map)
                                     .on('click', this.arrivedInEnigmeZone);
-
-                    this.markerList.push(marker)
                 }
-
-            
-
             },
             arrivedInEnigmeZone(){
                 this.$emit('arrivedInEnigmeZone')
@@ -69,7 +80,6 @@
             },
             moveMarker(){
 
-                // console.log(this.latitude, this.longitude);
                 if(this.marker){
                     this.map.removeLayer(this.marker);
                 }
@@ -80,23 +90,9 @@
                 this.marker = L.marker([this.latitude, this.longitude], {icon: customIcon})
                                 // .bindPopup(infosList[index][2])
                                 .addTo(this.map);
-
-
-
-                // console.log(this.places[1])
-                // console.log(this.measure(this.latitude, this.longitude, this.places[1].lat, this.places[1].lon));
-
                 if(this.measure(this.latitude, this.longitude, 43.109308899999995, 0.7266718)<10){
-
                     // this.$emit('arrivedInEnigmeZone');
                 }
-
-                // for (let index in infosList) {
-                //     let longitude = infosList[index][0]
-                //     let latitude = infosList[index][1]
-
-                //     this.markerList.push(marker)
-                // }
             },
             measure(lat1, long1, lat2, long2){
                 let R = 6378.137; // Radius of earth in KM
@@ -108,7 +104,10 @@
                 let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
                 let d = R * c;
                 return (d * 1000); // meters
-            }
+            },
+            // showModal(){
+            //     this.rewardModalDisplay = true;
+            // }
         },
 
         watch: {
