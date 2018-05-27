@@ -43,6 +43,42 @@
       "lon": 0.724647,
       "description": "Description cloître roman",
       "games": [{}, {}] 
+    },
+    {
+      "id": "cyberbase",
+      "name": "Cyber base",
+      "adress": "Rue de l'avenir",
+      "lat": 43.109117,
+      "lon": 0.726473,
+      "description": "Lieu cool",
+      "games": [{}, {}] 
+    },
+    {
+      "id": "id1",
+      "name": "Rue des remparts",
+      "adress": "Rue des remparts",
+      "lat": 43.108970,
+      "lon": 0.725034,
+      "description": "Description rue des remparts",
+      "games": [{}, {}] 
+    },
+    {
+      "id": "id2",
+      "name": "ceci est un nom",
+      "adress": "ceci est une adresse",
+      "lat": 43.108312,
+      "lon": 0.721525,
+      "description": "Description",
+      "games": [{}, {}] 
+    }, 
+    {
+      "id": "id3",
+      "name": "ceci est un nom",
+      "adress": "ceci est une adresse",
+      "lat": 43.108351,
+      "lon": 0.723617,
+      "description": "Description",
+      "games": [{}, {}] 
     }
   
 ]

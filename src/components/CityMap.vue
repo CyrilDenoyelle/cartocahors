@@ -40,11 +40,7 @@
 
                 }
 
-                // let marker = L.marker([43.109308899999995, 0.7266718])
-                //                 .addTo(this.map)
-                // let circle = L.circle([43.109308899999995, 0.7266718], 10)
-                //                 .addTo(this.map)
-
+            
 
             },
             arrivedInEnigmeZone(){
@@ -66,7 +62,6 @@
                     navigator.geolocation.getCurrentPosition(pos=>{
                         this.latitude = pos.coords.latitude;
                         this.longitude = pos.coords.longitude;
-                        // console.log(this.positionGps)
                     })
                 },1000)
 
@@ -147,6 +142,7 @@
         width: 100vw;
     
     }
+
 </style>
 
 
