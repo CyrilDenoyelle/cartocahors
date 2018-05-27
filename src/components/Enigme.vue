@@ -10,7 +10,7 @@
         <div v-else>
             <img src="https://gfx.gexe.pl/2015/3/24/204612.1427226372m.jpg" alt="Vieux qui parle"/>
             <p>{{msg.text}}</p>
-            <button v-on:click="messageLu">OK</button>
+            <button v-if="displayOKbutton" v-on:click="messageLu">OK</button>
         </div>
     </div>
 </template>
@@ -27,6 +27,7 @@
                 dialogues: dialogues,
                 picked:'',
                 screenView: 0,
+                displayOKbutton: false,
                 msg: {
                    result: null,
                    text:null,
@@ -44,6 +45,7 @@
       
                     let delay = setTimeout(function() {
                         this.msg.text = this.dialogues[this.numEnigme + 1].texte;
+                        this.displayOKbutton = true
                         }.bind(this), 3000)
                         
                     this.msg.result = 'OK';
@@ -55,6 +57,7 @@
                 
                 if(this.msg.result == "OK"){
                     this.msg.text = "";
+                    this.displayOKbutton = false
                     this.$emit("retourMap");
                 }
                 else {
