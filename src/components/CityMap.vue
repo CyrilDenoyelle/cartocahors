@@ -4,8 +4,8 @@
             <div id="map" class="map"></div>
         </div>
         <div>
-          <b-modal v-model="rewardModal" id="modal" title="Bootstrap-Vue">
-            <p class="my-4">Hello from modal!</p>
+          <b-modal v-model="rewardModal" id="modal" title="REWARD" >
+            <p class="my-4"><img src="../assets/icons/01Epee.jpg" alt="" height="200%" width="200vw"></p>
           </b-modal>
         </div>
     </div>

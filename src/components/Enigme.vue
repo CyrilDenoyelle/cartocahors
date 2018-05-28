@@ -8,7 +8,7 @@
             <button v-on:click="submitAnswer">Valider</button>
         </div>
         <div v-else>
-            <img src="https://gfx.gexe.pl/2015/3/24/204612.1427226372m.jpg" alt="Vieux qui parle"/>
+            <img src="http://hostamp.free.fr/kevin.png"  alt="Vieux qui parle"/>
             <p>{{msg.text}}</p>
             <button v-if="displayOKbutton" v-on:click="messageLu">OK</button>
         </div>
@@ -49,7 +49,6 @@
                         }.bind(this), 3000)
 
                     this.msg.result = 'OK';
-                    
                 } else {
                     this.msg.text = "Perdu ! Essaye encore";
                 }
@@ -65,10 +64,7 @@
                     this.screenView = 0;
                 }
             }
-        },
-        showModal () {
-          this.rewardModalDisplay = true;
-        },
+        }
 
     }
 </script>
