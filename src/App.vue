@@ -2,8 +2,7 @@
     <div class="container-fluid" >
         <div class="row" style="">
 
-
-                <Menu />
+            <Menu />
 
             <div v-if="displayNarrateur">
                 <img src="http://hostamp.free.fr/kevin.png" alt="Vieux qui parle"/>
